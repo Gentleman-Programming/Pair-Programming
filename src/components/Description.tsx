@@ -5,7 +5,7 @@ interface Props {
 
 function Description({ descriptionLabel, descriptionValue }: Props) {
   return (
-    <p>
+    <p className="text-black">
       {descriptionLabel}:
       <span className="text-red-500 pl-1">{descriptionValue}</span>
     </p>

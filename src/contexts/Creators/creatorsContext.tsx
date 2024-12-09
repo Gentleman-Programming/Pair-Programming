@@ -7,6 +7,22 @@ import {
 } from "react";
 import { Creator } from "../../models";
 
+const contentCreators: Creator[] = [
+  {
+    id: 0,
+    channels: [
+      {
+        id: 0,
+        name: "Youtube",
+        subscriberCount: 65300,
+        videoCount: 623,
+        viewCount: 5384955,
+      },
+    ],
+    name: "GentlemanProgramming",
+  },
+];
+
 type DefaultState = Creator[] | null;
 
 const Creatorscontext = createContext<{
@@ -18,7 +34,7 @@ const Creatorscontext = createContext<{
 });
 
 const CreatorsProvider = ({ children }: { children: ReactNode }) => {
-  const [state, setState] = useState<Creator[]>([] as Creator[]);
+  const [state, setState] = useState<Creator[]>(contentCreators);
 
   return (
     <Creatorscontext.Provider value={{ state, setState }}>

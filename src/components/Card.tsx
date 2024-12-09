@@ -1,15 +1,13 @@
-'use client'
+import { ReactNode } from "react";
 
-interface CardProps{
-  children: ReactNode,
+interface CardProps {
+  children: ReactNode;
 }
 
-function Card ({children}: CardProps){
+function Card({ children }: CardProps) {
   return (
-    <div className="h-40 w-40 bg-primary rounded-lg transition-transform duration-300 hover:scale-105 shadow-lg">
-      <div className="p-2"> 
-          {children}    
-      </div>
+    <div className="bg-white rounded-lg transition-transform duration-300 hover:scale-105 shadow-lg">
+      <div className="p-2">{children}</div>
     </div>
   );
 }

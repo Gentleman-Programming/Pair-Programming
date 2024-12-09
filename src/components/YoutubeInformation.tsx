@@ -1,13 +1,27 @@
+import { Channel } from "../models";
 import Description from "./Description";
 import Title from "./Title";
 
-function YoutubeInformation() {
+interface Props {
+  channel: Channel;
+}
+
+function YoutubeInformation({ channel }: Props) {
   return (
     <>
-      <Title>Youtube</Title>
-      <Description descriptionLabel="viewCount" descriptionValue={15000} />
-      <Description descriptionLabel="suscriberCount" descriptionValue={50000} />
-      <Description descriptionLabel="VideoCount" descriptionValue={35000} />
+      <Title>{channel.name}</Title>
+      <Description
+        descriptionLabel="View Count"
+        descriptionValue={channel.viewCount}
+      />
+      <Description
+        descriptionLabel="Suscriber Count"
+        descriptionValue={channel.subscriberCount}
+      />
+      <Description
+        descriptionLabel="Video Count"
+        descriptionValue={channel.videoCount}
+      />
     </>
   );
 }
